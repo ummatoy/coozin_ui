@@ -8,7 +8,7 @@ const kSecondaryColor = Color(0xF1F1F2);
 const kButtonBackColor = Color(0xFFF5EE);
 
 final boxDecorationStyle = BoxDecoration(
-  color: kButtonBackColor,
+  color: Colors.orange,
   borderRadius: BorderRadius.circular(10.0),
   boxShadow: [
     BoxShadow(
