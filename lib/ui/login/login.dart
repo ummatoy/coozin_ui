@@ -1,3 +1,6 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:coozin/utilits/const.dart';
 import 'package:flutter/material.dart';
 import '../../utilits/const.dart';
@@ -62,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
         Container(
           alignment: Alignment.centerLeft,
           decoration: boxDecorationStyle,
-          height: 60.0,
+          height: 40.0,
           child: TextField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
@@ -71,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
               prefixIcon: Icon(
                 Icons.lock,
               ),
-              hintText: '***',
+              hintText: 'Parolni kiriting',
               labelStyle: TextStyle(
                   color: _usernumberFocusNode.hasFocus
                       ? Theme.of(context).backgroundColor
@@ -85,14 +88,16 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _Login() {
+  Widget _login() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
+      height: 40.0,
+      color: Colors.orange,
       child: RaisedButton(
         elevation: 2.0,
         onPressed: () => print('Login Button Pressed'),
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(5.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
@@ -105,9 +110,10 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          //padding: EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
             SizedBox(height: 40.0),
             Column(
@@ -115,31 +121,44 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 16.0),
                 Text(
                   'Xush kelibsiz',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: TextStyle(fontSize: 24.0),
                 ),
+                SizedBox(height: 16.0),
                 Text(
                   'Akkauntingizni kiriting',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: TextStyle(fontSize: 16.0),
                 ),
               ],
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 46.0),
             _buildNumber(),
-            SizedBox(height: 12.0),
+            SizedBox(height: 14.0),
             _buildPassword(),
-            _Login(),
+            SizedBox(height: 68.0),
+            _login(),
+            SizedBox(height: 36.0),
             Text(
               'Parolingiz esingizdan chiqdimi?',
               textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16.0),
             ),
+            SizedBox(height: 16.0),
             RichText(
+              textAlign: TextAlign.center,
               text: TextSpan(
-                text: 'Akkauntingiz yo`qmi',
-                //style: DefaultTextStyle.of(context).style,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.black,
+                ),
                 children: <TextSpan>[
                   TextSpan(
-                    text: 'Ro`yxatdan o`tish',
+                    text: 'Akkauntingiz yo`qmi?',
                   ),
+                  TextSpan(
+                      text: 'Ro`yxatdan o`tish',
+                      style: TextStyle(
+                        color: Colors.orange,
+                      )),
                 ],
               ),
             ),

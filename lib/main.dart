@@ -1,9 +1,10 @@
-import 'package:coozin/ui/addFood.dart';
-import 'package:coozin/ui/home.dart';
+import 'package:coozin/ui/login/rebuildPassword.dart';
+import 'package:coozin/ui/order/addFood.dart';
+import 'package:coozin/ui/home/home.dart';
 import 'package:coozin/ui/login/login.dart';
 import 'package:coozin/ui/login/registration.dart';
 import 'package:coozin/ui/login/verification.dart';
-import 'package:coozin/ui/otp.dart';
+import 'package:coozin/ui/login/otp.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: FoodDetailsPage(),
+      home: LoginPage(),
     );
   }
 }

@@ -1,3 +1,6 @@
+import 'dart:html';
+import 'dart:ui';
+
 import 'package:coozin/utilits/const.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +15,8 @@ class _OtpPageState extends State<OtpPage> {
   Widget otpNumberWidget(int position) {
     try {
       return Container(
-        height: 40,
-        width: 40,
+        height: 48,
+        width: 48,
         decoration: BoxDecoration(
             border: Border.all(color: kPrimaryColor, width: 0),
             borderRadius: const BorderRadius.all(Radius.circular(8))),
@@ -47,6 +50,7 @@ class _OtpPageState extends State<OtpPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
+                  SizedBox(height: 140.0),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
@@ -57,6 +61,14 @@ class _OtpPageState extends State<OtpPage> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
+                  SizedBox(height: 27.0),
+                  Text(
+                    'Maxsus kodni kiriting',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  SizedBox(height: 24.0),
                   Container(
                     constraints: const BoxConstraints(maxWidth: 500),
                     child: Row(
@@ -75,39 +87,22 @@ class _OtpPageState extends State<OtpPage> {
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              constraints: const BoxConstraints(maxWidth: 500),
-              child: RaisedButton(
-                color: Colors.amber,
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(14))),
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        'Tasdiqlash',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(20)),
-                          color: Colors.orange,
-                        ),
-                        child: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.white,
-                          size: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+            SizedBox(height: 21.0),
+            Text(
+              'Kod kelmadimi',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 16.0,
+              ),
+            ),
+            SizedBox(height: 5.0),
+            Text(
+              'Kodni qayta yuvorish',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                backgroundColor: Colors.orange,
+                fontSize: 16.0,
               ),
             ),
           ],

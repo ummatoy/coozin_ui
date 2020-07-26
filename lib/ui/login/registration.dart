@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../../utilits/const.dart';
 
@@ -34,7 +36,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         Container(
           alignment: Alignment.centerLeft,
           decoration: boxDecorationStyle,
-          height: 60.0,
+          height: 40.0,
           child: TextField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
@@ -63,7 +65,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         Container(
           alignment: Alignment.centerLeft,
           decoration: boxDecorationStyle,
-          height: 60.0,
+          height: 40.0,
           child: TextField(
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
@@ -92,7 +94,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         Container(
           alignment: Alignment.centerLeft,
           decoration: boxDecorationStyle,
-          height: 60.0,
+          height: 40.0,
           child: TextField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
@@ -122,7 +124,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         Container(
           alignment: Alignment.centerLeft,
           decoration: boxDecorationStyle,
-          height: 60.0,
+          height: 40.0,
           child: TextField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
@@ -145,8 +147,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
     );
   }
 
-  Widget _Login() {
+  Widget _login() {
     return Container(
+      height: 40.0,
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: RaisedButton(
@@ -154,10 +157,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
         onPressed: () => print('Login Button Pressed'),
         padding: EdgeInsets.all(10.0),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(5.0),
         ),
         color: Colors.orange,
-        child: Text('Ro`yxatdan o`tish'),
+        child: Text(
+          'Ro`yxatdan o`tish',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
@@ -175,28 +183,34 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 SizedBox(height: 16.0),
                 Text(
                   'Ro`yxatdan o`tish',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: TextStyle(fontSize: 24.0),
                 ),
               ],
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 24.0),
             _buildName(),
-            SizedBox(height: 6.0),
+            SizedBox(height: 12.0),
             _buildNumber(),
-            SizedBox(height: 6.0),
+            SizedBox(height: 12.0),
             _buildPassword(),
-            SizedBox(height: 6.0),
+            SizedBox(height: 12.0),
             _repeatPassword(),
-            _Login(),
-            Text(
-              'Ro`yxatdan o`tish tugmachasini bosish orqali  siz quyidagi shartlarga rozilik bildirasiz',
-              textAlign: TextAlign.center,
-            ),
+            SizedBox(height: 32.0),
+            _login(),
             RichText(
-              text: TextSpan(
-                text: 'Term of confidence',
-                style: DefaultTextStyle.of(context).style,
-              ),
+              textAlign: TextAlign.center,
+              text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                    text:
+                        'Ro`yxatdan o`tish tugmasini bosish orqali siz quyidagi shartlarga rozilik bildirasiz',
+                    style: TextStyle(fontSize: 12.0, color: Colors.black)),
+                TextSpan(
+                    text: 'Term of confidence',
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.orange,
+                    ))
+              ]),
             ),
           ],
         ),

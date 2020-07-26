@@ -9,7 +9,18 @@ const kButtonBackColor = Color(0xFFF5EE);
 
 final boxDecorationStyle = BoxDecoration(
   color: Colors.orange,
-  borderRadius: BorderRadius.circular(10.0),
+  borderRadius: BorderRadius.circular(8.0),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.white,
+      blurRadius: 6.0,
+      offset: Offset(0, 2),
+    ),
+  ],
+);
+final mainDecorationStyle = BoxDecoration(
+  color: Colors.orange,
+  borderRadius: BorderRadius.circular(5.0),
   boxShadow: [
     BoxShadow(
       color: Colors.white,

@@ -1,12 +1,14 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:coozin/utilits/const.dart';
 
-class VerificationScreen extends StatefulWidget {
+class RebuildPasswordScreen extends StatefulWidget {
   @override
-  _VerificationScreenState createState() => _VerificationScreenState();
+  _RebuildPasswordScreenState createState() => _RebuildPasswordScreenState();
 }
 
-class _VerificationScreenState extends State<VerificationScreen> {
+class _RebuildPasswordScreenState extends State<RebuildPasswordScreen> {
   final _usernumberController = TextEditingController();
   final _usernumberFocusNode = FocusNode();
   final _unfocusedColor = Colors.grey[600];
@@ -22,7 +24,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
                 Icons.phone,
               ),
@@ -66,23 +67,27 @@ class _VerificationScreenState extends State<VerificationScreen> {
             SizedBox(height: 40.0),
             Column(
               children: <Widget>[
-                SizedBox(height: 16.0),
+                SizedBox(height: 145.0),
                 Text(
                   'Parolni tiklash',
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline4,
+                  style: TextStyle(
+                    fontSize: 24.0,
+                  ),
                 ),
-                SizedBox(height: 50.0),
+                SizedBox(height: 10.0),
                 Text(
                   'Iltimos telefon raqamingizni kiriting.Sizga telefon raqam orqali parolni tiklash uchun havola yuvoriladi',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: TextStyle(
+                    fontSize: 12.0,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ],
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 24.0),
             _buildVerification(),
-            SizedBox(height: 10.0),
+            SizedBox(height: 36.0),
             _nextButton()
           ],
         ),

@@ -1,4 +1,4 @@
-import 'package:coozin/ui/home.dart';
+import 'package:coozin/ui/home/home.dart';
 import 'package:coozin/ui/login/profileListTab.dart';
 import 'package:coozin/ui/login/recieptListTab.dart';
 import 'package:coozin/ui/login/refreshLIstTab.dart';

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../../utilits/const.dart';
 
@@ -17,12 +19,12 @@ class _VerificationScreenState extends State<VerificationScreen> {
         Container(
           alignment: Alignment.centerLeft,
           decoration: boxDecorationStyle,
-          height: 60.0,
+          height: 40.0,
           child: TextField(
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
+              //contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
                 Icons.phone,
               ),
@@ -40,18 +42,20 @@ class _VerificationScreenState extends State<VerificationScreen> {
   }
 
   Widget _nextButton() {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 25.0),
-      width: double.infinity,
-      child: RaisedButton(
-        elevation: 2.0,
-        onPressed: () => print('Login Button Pressed'),
-        padding: EdgeInsets.all(10.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+    //run qilganda ko`rinmadi
+    return RaisedButton(
+      elevation: 2.0,
+      onPressed: () => print('Login Button Pressed'),
+      padding: EdgeInsets.all(10.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      color: Colors.orange,
+      child: Text(
+        'Ro`yxatdan o`tish',
+        style: TextStyle(
+          color: Colors.white,
         ),
-        color: Colors.orange,
-        child: Text('Ro`yxatdan o`tish'),
       ),
     );
   }
@@ -66,23 +70,25 @@ class _VerificationScreenState extends State<VerificationScreen> {
             SizedBox(height: 40.0),
             Column(
               children: <Widget>[
-                SizedBox(height: 16.0),
+                SizedBox(height: 180.0),
                 Text(
                   'Telefon raqamni tasdiqlash',
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline4,
+                  style: TextStyle(
+                    fontSize: 24.0,
+                  ),
                 ),
-                SizedBox(height: 50.0),
+                SizedBox(height: 25.0),
                 Text(
                   'Sizning raqamingizga sms kod yuvorildi',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: TextStyle(fontSize: 17.0),
                 ),
               ],
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 25.0),
             _buildVerification(),
-            SizedBox(height: 10.0),
-            _nextButton()
+            SizedBox(height: 56.0),
+            _nextButton(),
           ],
         ),
       ),
